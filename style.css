@@ -16,5 +16,21 @@ body {
     max-width: 30em;
     min-height: 20em;
     max-height: 30em;
-    border: solid black 4px;
+    border: solid black 1px;
+}
+
+.square {
+    border: 2px solid black;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    border: 15px solid red;
+    box-sizing: border-box;
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
 }
