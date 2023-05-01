@@ -14,7 +14,7 @@ function Player(name, mark) {
 
 function addMark(e) {
   const display = document.createElement('div');
-  display.classList.add('circle');
+  display.classList.add('cross');
   e.target.append(display);
 }
 const player1 = new Player('player1', 'O');
