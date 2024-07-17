@@ -32,6 +32,7 @@ const Game = (() => {
 
     turn = turn === 'circle' ? 'cross' : 'circle';
     e.target.removeEventListener('click', addMark);
+    document.getElementById("result").innerHTML = " ";
     checkScore();
   }
 
