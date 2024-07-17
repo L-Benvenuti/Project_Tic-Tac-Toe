@@ -1,13 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Ultra&display=swap');
+
 * {
-    
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2.5rem;
 }
 
+/* TEXT & RESTART BUTTON */
+h1 {
+    font-size: 3rem;
+    font-family: "Ultra", serif;
+    letter-spacing: 0.4rem;
+}
+
+p, button {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 2rem;
+}
+
+button {
+    border: none;
+    border-radius: 1rem;
+    background-color: darkcyan;
+    color: white;
+    padding: 1rem 5rem;
+    transition: ease-in-out 0.3s;
+}
+
+button:hover {
+    background-color: rgba(0, 139, 139, 0.7);
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+/* GAME BOARD */
 #gameboard {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -21,24 +56,26 @@ body {
 
 .square {
     border: 2px solid black;
-    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: ease-in-out 0.2s;
 }
 
-.circle,
-.cross {
-    height: 90px;
-    width: 90px;
+.square:hover {
+    cursor: pointer;
+    background-color: rgba(175, 175, 175, 0.568);
+    transition: ease-in-out 0.2s;
 }
 
+/* CIRCLE */
 .circle {
     border: 15px solid red;
     box-sizing: border-box;
     border-radius: 50%;
 }
 
+/* X */
 .cross {
     position: relative;
     transform: rotate(45deg);
@@ -62,4 +99,10 @@ body {
     width: 100%;
     height: 30%;
     margin-top: -15%;
+}
+
+.circle,
+.cross {
+    height: 90px;
+    width: 90px;
 }

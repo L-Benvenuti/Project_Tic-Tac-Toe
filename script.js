@@ -1,8 +1,10 @@
+// CLASS GAME TO CHECK SCORE & ADD MARKS ONTO THE BOARD
 const Game = (() => {
   let turn = 'circle';
 
   function checkScore() {
     const allSquares = document.querySelectorAll('.square');
+    const result = document.getElementById("result");
     const winningOptions = [
       [0, 1, 2], [3, 4, 5], [6, 7, 8],
       [0, 3, 6], [1, 4, 7], [2, 5, 8],
@@ -14,10 +16,10 @@ const Game = (() => {
       const crossWins = array.every((cell) => allSquares[cell].firstChild?.classList.contains('cross'));
 
       if (circleWins) {
-        console.log('circle won!');
+        result.innerHTML = "Circle Won!"
         allSquares.forEach((square) => square.replaceWith(square.cloneNode(true)));
       } else if (crossWins) {
-        console.log('cross won!');
+        result.innerHTML = "Cross Won!"
         allSquares.forEach((square) => square.replaceWith(square.cloneNode(true)));
       }
     });
@@ -36,6 +38,7 @@ const Game = (() => {
   return { addMark };
 })();
 
+// CREATE GAME BOARD
 const GameBoard = (() => {
   const board = document.getElementById('gameboard');
   const cells = ['', '', '', '', '', '', '', '', ''];
